@@ -1,25 +1,30 @@
 import React, { useState, useCallback } from 'react';
 import  { DropdownList } from '../components/DropdownList';
-import { UserType } from '../types/user';
+import { ArtType, UserType } from '../types/user';
+import { Users, Arts } from '../mocks/data';
 
-interface Props {
-  users: UserType[];
-}
 
-export const Index = (props: Props) => {
-  const { users } = props;
-  // DropDownで選択した単一のユーザーの名前をStateで管理
-  const [userName, setUserName] = useState<string>("hoge");
+export const Index = () => {
+  const users: UserType[] = Users;
+  const arts: ArtType[] = Arts;
+  const [comment, setComment] = useState<string>("コメント");
+  const [price, setPrice] = useState<number>(0);
   
-  const handleSetUserName = useCallback((name: string) => {
-    setUserName(name)
+  const handleSetUserName = useCallback((value: string) => {
+    setComment(value)
+  }, []);
+  const handleSetArtPrice = useCallback((value: number) => {
+    setPrice(value)
   }, []);
 
   return (
     <div>
-      <p>{userName}</p>
+      <p>{comment}</p>
       <span>ユーザー一覧</span>
-      <DropdownList users={users} setUserName={handleSetUserName} />
+      <DropdownList<string> listItems={users} setListItem={handleSetUserName} />
+      <p>{price}</p>
+      <span>作品一覧</span>
+      <DropdownList<number> listItems={arts} setListItem={handleSetArtPrice} />
     </div>
   );
 };

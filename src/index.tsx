@@ -2,12 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import { Index } from './pages/Index';
-import { Users } from './mocks/data'
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Index users={Users}/>
+    <Index />
   </React.StrictMode>,
   document.getElementById('root')
 );

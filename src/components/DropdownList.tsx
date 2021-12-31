@@ -1,23 +1,24 @@
 import React from 'react';
 import { DropdownItem } from './DropdownItem';
-import { UserType } from '../types/user'
+import { ListItemType } from '../types/user'
 
-interface Props {
-  users: UserType[];
-  setUserName: (name: string) => void; //親コンポーネントで管理するStateをセットするAction
+interface Props<T> {
+  listItems: ListItemType<T>[];
+  setListItem: (value: T) => void;
 }
 
-export const DropdownList = (props: Props) => {
-  const { users, setUserName } = props;
+export const DropdownList = <T,>(props: Props<T>) => {
+  const { listItems, setListItem } = props;
 
   return (
     <div>
-      {users.map((user, i) => {
+      {listItems.map((listItem, i) => {
         return (
-          <DropdownItem
+          <DropdownItem<T>
             key={i}
-            value={user.name}
-            setValue={setUserName}
+            name={listItem.name}
+            value={listItem.value}
+            setValue={setListItem}
           />
         );
       })}
