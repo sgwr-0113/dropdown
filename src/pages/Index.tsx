@@ -6,7 +6,7 @@ import { Users, Arts } from '../mocks/data';
 export const Index = () => {
   const users: UserType[] = Users;
   const arts: ArtType[] = Arts;
-  const [comment, setComment] = useState<string>("コメント");
+  const [comment, setComment] = useState<string>("");
   const [price, setPrice] = useState<number>(0);
 
   // useEffectは第二引数[]内の値が変わるたびに実行される
@@ -23,10 +23,10 @@ export const Index = () => {
 
   return (
     <div>
-      <p>{comment}</p>
+      <p>コメント「{comment}」</p>
       <span>ユーザー一覧</span>
       <DropdownList<string> listItems={users} setListItem={handleSetUserName} />
-      <p>{price}</p>
+      <p>価格 {price}円</p>
       <span>作品一覧</span>
       <DropdownList<number> listItems={arts} setListItem={handleSetArtPrice} />
     </div>
