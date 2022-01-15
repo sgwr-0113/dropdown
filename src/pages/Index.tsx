@@ -1,7 +1,7 @@
 import React, { useState, useCallback, useEffect } from 'react';
-import  { DropdownList } from '../components/DropdownList';
-import { ArtType, UserType } from '../types/user';
-import { Users, Arts } from '../mocks/data';
+import  { DropdownList } from 'components/DropdownList';
+import { ArtType, UserType } from 'types/user';
+import { Users, Arts } from 'mocks/data';
 
 export const Index = () => {
   const users: UserType[] = Users;

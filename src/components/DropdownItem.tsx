@@ -1,5 +1,5 @@
 import React from 'react';
-import style from "../stylesheets/DropdownItem.module.scss"
+import style from "stylesheets/DropdownItem.module.scss"
 
 interface Props<T> {
   name: string;

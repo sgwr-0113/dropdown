@@ -1,6 +1,6 @@
 import React from 'react';
-import { DropdownItem } from './DropdownItem';
-import { ListItemType } from '../types/user'
+import { DropdownItem } from 'components/DropdownItem';
+import { ListItemType } from 'types/user';
 
 interface Props<T> {
   listItems: ListItemType<T>[];
