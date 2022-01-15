@@ -1,4 +1,5 @@
 import React from 'react';
+import style from "../stylesheets/DropdownItem.module.scss"
 
 interface Props<T> {
   name: string;
@@ -11,6 +12,6 @@ export const DropdownItem = <T,>(props: Props<T>) => {
 
   
   return (
-    <div onClick={() => setValue(props.value)}>{name}</div>
+    <div className={style["dropdown-item"]} onClick={() => setValue(props.value)}>{name}</div>
   );
 };
