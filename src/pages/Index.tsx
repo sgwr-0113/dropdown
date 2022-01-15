@@ -2,6 +2,7 @@ import React, { useState, useCallback, useEffect } from 'react';
 import  { DropdownList } from 'components/DropdownList';
 import { ArtType, UserType } from 'types/user';
 import { Users, Arts } from 'mocks/data';
+import style from 'stylesheets/Index.module.scss';
 
 export const Index = () => {
   const users: UserType[] = Users;
@@ -22,13 +23,17 @@ export const Index = () => {
   }, []);
 
   return (
-    <div>
-      <p>コメント「{comment}」</p>
-      <span>ユーザー一覧</span>
-      <DropdownList<string> listItems={users} setListItem={handleSetUserName} />
-      <p>価格 {price}円</p>
-      <span>作品一覧</span>
-      <DropdownList<number> listItems={arts} setListItem={handleSetArtPrice} />
+    <div className={style["wrapper"]}>
+      <div className={style["card"]}>
+        <h1>コメント「{comment}」</h1>
+        <h2>ユーザー一覧</h2>
+        <DropdownList<string> listItems={users} setListItem={handleSetUserName} />
+      </div>
+      <div className={style["card"]}>
+        <h1>価格 {price}円</h1>
+        <h2>作品一覧</h2>
+        <DropdownList<number> listItems={arts} setListItem={handleSetArtPrice} />
+      </div>
     </div>
   );
 };

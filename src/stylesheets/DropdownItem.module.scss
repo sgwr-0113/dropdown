@@ -1,9 +1,15 @@
 .dropdown-item {
   width: 120px;
   height: 24px;
-  background-color: aliceblue;
+  background-color: #afeeee;
   padding: 8px;
   margin-bottom: 8px;
   border-radius: 8px;
   text-align: center;
+  cursor: pointer;
+  transition-duration: 0.5s;
+}
+
+.dropdown-item:hover {
+  background-color: #e0ffff;
 }
