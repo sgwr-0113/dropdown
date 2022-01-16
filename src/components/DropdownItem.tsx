@@ -1,5 +1,6 @@
 import React from 'react';
-import style from "stylesheets/DropdownItem.module.scss"
+// import style from "stylesheets/DropdownItem.module.scss";
+import Button from '@mui/material/Button';
 
 interface Props<T> {
   name: string;
@@ -12,6 +13,6 @@ export const DropdownItem = <T,>(props: Props<T>) => {
 
   
   return (
-    <div className={style["dropdown-item"]} onClick={() => setValue(props.value)}>{name}</div>
+    <Button variant="outlined" size="medium" sx={{width: 160}}onClick={() => setValue(props.value)}>{name}</Button>
   );
 };

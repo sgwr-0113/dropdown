@@ -3,10 +3,27 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import { Index } from './pages/Index';
 import reportWebVitals from './reportWebVitals';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const theme = createTheme({
+  typography: {
+    fontFamily: '游ゴシック',
+  },
+  palette: {
+    primary: {
+        main: '#ad002d',
+    },
+    secondary: {
+      main: '#316745',
+    }
+  }
+});
 
 ReactDOM.render(
   <React.StrictMode>
-    <Index />
+    <ThemeProvider theme={theme}>
+      <Index />
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

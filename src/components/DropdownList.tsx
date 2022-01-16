@@ -1,6 +1,8 @@
 import React from 'react';
 import { DropdownItem } from 'components/DropdownItem';
 import { ListItemType } from 'types/types';
+import Stack from '@mui/material/Stack';
+
 
 interface Props<T> {
   listItems: ListItemType<T>[];
@@ -11,7 +13,8 @@ export const DropdownList = <T,>(props: Props<T>) => {
   const { listItems, setListItem } = props;
 
   return (
-    <div>
+    // sxを用いると簡易表記が可能になる pはpadding
+    <Stack spacing={2} sx={{p: '20px 0'}}>
       {listItems.map((listItem, i) => {
         return (
           <DropdownItem<T>
@@ -22,6 +25,6 @@ export const DropdownList = <T,>(props: Props<T>) => {
           />
         );
       })}
-    </div>
+    </Stack>
   );
 };
