@@ -61,7 +61,7 @@ export const Index = () => {
   >
       <MyPaper elevation={3} className={style["paper"]}>
         <ChatBubbleOutlineIcon className={style["icon"]} color="primary" fontSize="large" />
-        <Typography variant="h5">{comment}</Typography>
+        <Typography variant="h5">「{comment}」</Typography>
         <Typography variant="h6">ユーザー一覧</Typography>
         <DropdownList<string> listItems={users} setListItem={handleSetUserComment} />
       </MyPaper>
