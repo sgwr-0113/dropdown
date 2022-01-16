@@ -10,7 +10,6 @@ interface Props<T> {
 
 export const DropdownItem = <T,>(props: Props<T>) => {
   const { name, setValue } = props;
-
   
   return (
     <Button variant="outlined" size="medium" sx={{width: 160}}onClick={() => setValue(props.value)}>{name}</Button>
