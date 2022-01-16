@@ -67,7 +67,7 @@ export const Index = () => {
       </MyPaper>
       <MyPaper elevation={3} className={style["paper"]}>
         <PaidOutlinedIcon className={style["icon"]} color="primary" fontSize='large' />
-        <Typography variant="h5">価格 {price}円</Typography>
+        <Typography variant="h5">{price}円</Typography>
         <Typography variant="h6">作品一覧</Typography>
         <DropdownList<number> listItems={arts} setListItem={handleSetArtPrice} />
       </MyPaper>
