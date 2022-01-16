@@ -6,6 +6,7 @@ import { Users, Arts } from 'mocks/data';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import { styled } from '@mui/material/styles';
+import { Typography } from '@mui/material';
 
 // styled方式で既存のコンポーネントをカスタマイズできる
 const MyPaper = styled(Paper)({
@@ -40,22 +41,25 @@ export const Index = () => {
     sx={{
       display: 'flex',
       flexWrap: 'wrap',
-      '& h1': {
+      '& h5': {
         color: 'primary.main',
+        lineHeight: 3,
       },
-      '& h2': {
+      '& h6': {
         color: 'secondary.main',
-      }
+        lineHeight: 2,
+        fontWeight: 700,
+      },
     }}
   >
       <MyPaper elevation={3}>
-        <h1>コメント「{comment}」</h1>
-        <h2>ユーザー一覧</h2>
+        <Typography variant="h5">コメント「{comment}」</Typography>
+        <Typography variant="h6">ユーザー一覧</Typography>
         <DropdownList<string> listItems={users} setListItem={handleSetUserComment} />
       </MyPaper>
       <MyPaper elevation={3}>
-        <h1>価格 {price}円</h1>
-        <h2>作品一覧</h2>
+        <Typography variant="h5">価格 {price}円</Typography>
+        <Typography variant="h6">作品一覧</Typography>
         <DropdownList<number> listItems={arts} setListItem={handleSetArtPrice} />
       </MyPaper>
     </Box>
