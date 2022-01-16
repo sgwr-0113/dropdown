@@ -4,7 +4,6 @@ import './index.css';
 import { Index } from './pages/Index';
 import reportWebVitals from './reportWebVitals';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import Typography from '@mui/material/Typography';
 
 const theme = createTheme({
   typography: {
