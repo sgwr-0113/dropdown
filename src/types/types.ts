@@ -10,6 +10,6 @@
 
 // 類似した型をジェネリクスで共通化
 export type ListItemType<T> = {
-  name: string;
-  value: T;
-};
+  name: string
+  value: T
+}
